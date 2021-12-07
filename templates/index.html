@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Crédit app</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Simulation de Predict  </h1>
+<form action="{{url_for('predict')}}" class="row" method="post">
+     <div class="col-6">
+        <!-- Case de ajout de l'age -->
+        <div class="form-group m-2">
+            <label for="age" class="form-label">AGE :</label>
+            <input type="tel" class="form-control" name="AGE" placeholder="AGE" id="age" required="required" />
+        </div>
+
+        <!--    Case de selection du sexe -->
+            <div class="form-group m-2">
+                <label for="sexe" class="form-label">SEXE :</label>
+                <select class="form-select" name="SEXE" id="sexe" aria-label="Default select example">
+                    <option selected>-- CHOISIR --</option>
+                    <option value="1">Homme</option>
+                    <option value="0">Femme</option>
+                </select>
+            </div>
+
+        <!-- Case de selection du TDT -->
+            <div class="form-group m-2">
+                <select class="form-select" name="TDT" aria-label="Default select example">
+                    <option selected>-- CHOISIR LE TDT --</option>
+                    <option value="0">AA</option>
+                    <option value="1">ASY</option>
+                    <option value="2">AT</option>
+                    <option value="3">DNA</option>
+                </select>
+            </div>
+
+        <!-- Case de selection de PAR -->
+        <div class="m-2">
+            <input type="tel" class="form-control" name="PAR" placeholder="PAR" required="required" />
+        </div>
+
+        <!-- Case de selection du CHOLESTEROLE -->
+        <div class="m-2">
+            <input type="tel" class="form-control" name="CHOLESTEROL" placeholder="CHOLESTEROL" required="required" />
+        </div>
+
+        <!-- Case de selection dU GAJ -->
+        <div class="m-2">
+            <select class="form-select" name="GAJ" aria-label="Default select example">
+                <option selected>-- choissisez le GAJ --</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+        </div>
+
+    </div>
+    <div class="col-6">
+         <!-- Case de selection de l' ECG -->
+            <div class="m-2">
+                <select class="form-select" name="ECG" aria-label="Default select example">
+                    <option selected>-- choissisez le ECG --</option>
+                    <option value="0">LVH</option>
+                    <option value="1">Normal</option>
+                    <option value="2">ST</option>
+                </select>
+            </div>
+
+        <!-- Case de selection du FCMAX -->
+            <div class="m-2">
+                <input type="tel" class="form-control" name="FCMAX" placeholder="FCMAX" required="required" />
+            </div>
+
+        <!-- Case de selection de ANGINE -->
+            <div class="m-2">
+                <select class="form-select" name="ANGINE" aria-label="Default select example">
+                    <option selected>-- ANGINE --</option>
+                    <option value="1">Oui</option>
+                    <option value="0">Non</option>
+                </select>
+            </div>
+
+        <!-- Case de selection de Depression-->
+      <div class="m-2">
+                <input type="tel" class="form-control" name="DEPRESSION" placeholder="DEPRESSION" required="required" />
+            </div>
+
+        <!-- Case de selection de pente -->
+            <div class="m-2">
+                <select class="form-select" name="PENTE" aria-label="Default select example">
+                    <option selected>-- PENTE --</option>
+                    <option value="0">Ascendant</option>
+                    <option value="2">Plat</option>
+                    <option value="1">Descendant</option>
+                </select>
+            </div>
+    </div>
+         <button type="submit" class="btn btn-primary btn-large">Predict</button>
+</form>
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
